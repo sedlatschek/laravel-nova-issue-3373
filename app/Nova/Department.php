@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -45,6 +46,7 @@ class Department extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name'),
             BelongsTo::make('Branch'),
+            HasMany::make('Something'),
         ];
     }
 

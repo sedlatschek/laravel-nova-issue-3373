@@ -15,4 +15,9 @@ class Branch extends Model
     {
         return $this->belongsTo(Organisation::class);
     }
+
+    public function departments()
+    {
+        return $this->hasMany(Department::class);
+    }
 }

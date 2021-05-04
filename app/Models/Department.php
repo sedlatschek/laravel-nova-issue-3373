@@ -15,4 +15,9 @@ class Department extends Model
     {
         return $this->belongsTo(Branch::class);
     }
+
+    public function somethings()
+    {
+        return $this->hasMany(Something::class);
+    }
 }
