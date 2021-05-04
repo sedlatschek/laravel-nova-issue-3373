@@ -48,6 +48,14 @@ class Department extends Resource
         ];
     }
 
+    public static function indexQuery(Request $request, $query)
+    {
+        return $query
+                ->leftJoin('branches', 'departments.branch_id', '=', 'branches.id')
+                ->where('branches.organisation_id', $request->user()->organisation_id)
+                ->select('departments.*');
+    }
+
     /**
      * Get the cards available for the request.
      *
